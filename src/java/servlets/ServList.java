@@ -70,6 +70,22 @@ public class ServList extends HttpServlet
                } 
          }
       
+      else if ("u".equals(l))
+         {
+          dao.Usuario fmp = new dao.Usuario(request.getParameter("id"), request.getParameter("prontuario"),
+                       request.getParameter("nome"), request.getParameter("email"));   
+          ResultSet rs = Mlista.lusuario(fmp); 
+          if (rs==null) msg="Nada Encontrado";
+          else {out.println("<table border='1'>");
+                rs.first();
+                do {out.println("<tr><td>"+rs.getString("id")+
+                    "</td><td>"+rs.getString("nome")+
+                    "</td><td>"+rs.getString("prontuario")+    
+                    "</td><td>"+rs.getString("email")+"</td></tr>");
+                   }while (rs.next());
+                out.println("</table>");
+               } 
+         }
           
     }
      catch (Exception ex){msg="Erro: "+ex; out.println(msg); }

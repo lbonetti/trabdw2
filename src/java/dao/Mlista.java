@@ -40,4 +40,21 @@ public class Mlista
         else return rs;       
   } catch (Exception e){return null;}
   }
+ 
+ public static ResultSet lusuario(Usuario lf){
+  Connection conn = null;
+  try { conn=Conexao.getConexao();
+        String sql="SELECT * FROM usuario ";
+        if (!"".equals(lf.getProntuario()))
+            sql += "WHERE prontuario='"+lf.getProntuario()+"'";
+        else if (!"".equals(lf.getNomec()))
+            sql += "WHERE nome='"+lf.getNomec()+"'";
+        Statement st = conn.createStatement();
+        ResultSet rs = st.executeQuery(sql);
+        rs.last();
+        int n = rs.getRow();
+        if (n==0) return null;
+        else return rs;       
+  } catch (Exception e){return null;}
+  }
 }
