@@ -86,6 +86,22 @@ public class ServList extends HttpServlet
                 out.println("</table>");
                } 
          }
+      
+       else if ("fo".equals(l))
+         {
+          dao.Fornecedor fmp = new dao.Fornecedor(request.getParameter("id"),
+                       request.getParameter("nome"), request.getParameter("cnpj"));   
+          ResultSet rs = Mlista.lfornecedor(fmp); 
+          if (rs==null) msg="Nada Encontrado";
+          else {out.println("<table border='1'>");
+                rs.first();
+                do {out.println("<tr><td>"+rs.getString("id")+
+                    "</td><td>"+rs.getString("nome")+    
+                    "</td><td>"+rs.getString("cnpj")+"</td></tr>");
+                   }while (rs.next());
+                out.println("</table>");
+               } 
+         }
           
     }
      catch (Exception ex){msg="Erro: "+ex; out.println(msg); }

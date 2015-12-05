@@ -57,4 +57,21 @@ public class Mlista
         else return rs;       
   } catch (Exception e){return null;}
   }
+ 
+ public static ResultSet lfornecedor(Fornecedor lf){
+  Connection conn = null;
+  try { conn=Conexao.getConexao();
+        String sql="SELECT * FROM fornecdor ";
+        if (!"".equals(lf.getIdc()))
+            sql += "WHERE id='"+lf.getIdc()+"'";
+        else if (!"".equals(lf.getNomec()))
+            sql += "WHERE nome='"+lf.getNomec()+"'";
+        Statement st = conn.createStatement();
+        ResultSet rs = st.executeQuery(sql);
+        rs.last();
+        int n = rs.getRow();
+        if (n==0) return null;
+        else return rs;       
+  } catch (Exception e){return null;}
+  }
 }
