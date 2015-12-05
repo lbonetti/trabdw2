@@ -33,14 +33,15 @@ public class ServList extends HttpServlet
   {
     response.setContentType("text/html;charset=UTF-8");
     String l = request.getParameter("l");
-    dao.Campus cmp = new dao.Campus(request.getParameter("id"), request.getParameter("uasg"),
-                       request.getParameter("nome"), request.getParameter("sigla"));
     String msg="";
     PrintWriter out = response.getWriter();
     try 
     { 
       if ("c".equals(l))
-         {ResultSet rs = Mlista.lcampus(cmp); 
+         {
+          dao.Campus cmp = new dao.Campus(request.getParameter("id"), request.getParameter("uasg"),
+                       request.getParameter("nome"), request.getParameter("sigla"));
+          ResultSet rs = Mlista.lcampus(cmp); 
           if (rs==null) msg="Nada Encontrado";
           else {out.println("<table border='1'>");
                 rs.first();
@@ -48,6 +49,22 @@ public class ServList extends HttpServlet
                     "</td><td>"+rs.getString("uasg")+
                     "</td><td>"+rs.getString("nome")+
                     "</td><td>"+rs.getString("sigla")+"</td></tr>");
+                   }while (rs.next());
+                out.println("</table>");
+               } 
+         }
+      
+      else if ("f".equals(l))
+         {
+          dao.Funcionalidade fmp = new dao.Funcionalidade(request.getParameter("id"),
+                       request.getParameter("nome"), request.getParameter("classe"));   
+          ResultSet rs = Mlista.lfuncionalidade(fmp); 
+          if (rs==null) msg="Nada Encontrado";
+          else {out.println("<table border='1'>");
+                rs.first();
+                do {out.println("<tr><td>"+rs.getString("id")+
+                    "</td><td>"+rs.getString("nome")+
+                    "</td><td>"+rs.getString("classe")+"</td></tr>");
                    }while (rs.next());
                 out.println("</table>");
                } 

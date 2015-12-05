@@ -11,7 +11,6 @@
         <form action="ServList?l=f" method="POST">
           Id da Funcionalidade: <input type="text" name="id" value="" /><br>
           Nome da Funcionalidade: <input type="text" name="nome" value="" /><br>
-          Classe da Funcionalidade: <input type="text" name="classe" value="" /><br>
           Com os campos em branco, lista todos os campus.
           <input type="submit" value="Enviar" />        
         </form>

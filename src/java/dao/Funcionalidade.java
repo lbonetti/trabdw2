@@ -13,13 +13,13 @@ public class Funcionalidade
    this.idc=v_idc;}
  public void setNomec(String v_nomec){
    this.nomec=v_nomec;}
- public void setSiglac(String v_classec){
+ public void setClassec(String v_classec){
    this.classec=v_classec;}
  public String getIdc(){
    return idc; }
  public String getNomec(){
    return nomec; }
- public String getSiglac(){
+ public String getClassec(){
    return classec; }
   
 }
