@@ -11,7 +11,7 @@
         <form action="ServList?l=u" method="POST">
           Prontuário do Usuário: <input type="text" name="prontuario" value="" /><br>
           Nome do Usuário: <input type="text" name="nome" value="" /><br>
-          Com os campos em branco, lista todos os campus.
+          Para listar todos os usuários, deixe todos os campos em branco.
           <input type="submit" value="Enviar" />        
         </form>
         </font></center>

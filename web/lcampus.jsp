@@ -11,7 +11,7 @@
         <form action="ServList?l=c" method="POST">
           Id do Campus: <input type="text" name="id" value="" /><br>
           Nome do Campus: <input type="text" name="nome" value="" /><br>
-          Com os campos em branco, lista todos os campus.
+          Para listar todos os campus, deixe todos os campos em branco.
           <input type="submit" value="Enviar" />        
         </form>
         </font></center>

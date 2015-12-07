@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class Mlista
-{/* ------Inclusão de Tipos -----------*/
+{/* ------Listagem -----------*/
  public static ResultSet lcampus(Campus lc){
   Connection conn = null;
   try { conn=Conexao.getConexao();
@@ -61,7 +61,7 @@ public class Mlista
  public static ResultSet lfornecedor(Fornecedor lf){
   Connection conn = null;
   try { conn=Conexao.getConexao();
-        String sql="SELECT * FROM fornecdor ";
+        String sql="SELECT * FROM fornecedor ";
         if (!"".equals(lf.getIdc()))
             sql += "WHERE id='"+lf.getIdc()+"'";
         else if (!"".equals(lf.getNomec()))

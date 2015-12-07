@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class Conexao
 { private static final String STR_DRIVER = "com.mysql.jdbc.Driver";
   private static final String USER = "root"; 
-  private static final String PASSWORD = "ifsp";
+  private static final String PASSWORD = "";
   private static final String IP = "localhost";
   private static final String DATABASE = "saciq";
   private static final String STR_CON =
