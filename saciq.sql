@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+
 
 --
 -- Database: `saciq`
@@ -25,6 +25,10 @@ SET time_zone = "+00:00";
 --
 -- Estrutura da tabela `campus`
 --
+
+DROP DATABASE IF EXISTS saciq;
+CREATE DATABASE saciq;
+USE saciq;
 
 CREATE TABLE IF NOT EXISTS `campus` (
   `id` int(11) NOT NULL,
